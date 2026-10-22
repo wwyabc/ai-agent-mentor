@@ -1,0 +1,17 @@
+{
+  "name": "AI Agent 随身导师",
+  "short_name": "AI导师",
+  "description": "基于开源课程 AI Engineering from Scratch 的中文 AI Agent 导师，随时随地把 AI Agent 知识学完。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f8fa",
+  "theme_color": "#3553ff",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,5 @@
+dist/
+dist.zip
+.git/
+.DS_Store
+Thumbs.db

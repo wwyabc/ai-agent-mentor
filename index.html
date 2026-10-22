@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#3553ff">
+<meta name="description" content="基于开源课程 AI Engineering from Scratch 的中文 AI 导师，随时随地把 AI Agent 知识学完。">
+<title>AI Agent 随身导师</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AI导师">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<div id="app">
+  <header class="topbar" id="topbar"></header>
+  <main id="view"></main>
+</div>
+<nav class="tabbar" id="tabbar"></nav>
+
+<!-- 数据层：课程目录（由 tools/build-catalog.cjs 从仓库生成） -->
+<script src="assets/js/01-core.js"></script>
+<script src="assets/js/02-curriculum-a.js"></script>
+<script src="assets/js/03-curriculum-b.js"></script>
+<script src="assets/js/04-catalog.js"></script>
+<script src="assets/js/05-zh-titles.js"></script>
+<script src="assets/js/06-zh-p19.js"></script>
+<!-- 内容层：精编中文讲解 + 概念卡 -->
+<script src="assets/js/07-content-a.js"></script>
+<script src="assets/js/08-content-b.js"></script>
+<script src="assets/js/09-topics.js"></script>
+<!-- 引擎层 -->
+<script src="assets/js/10-retriever.js"></script>
+<script src="assets/js/11-tutor.js"></script>
+<script src="assets/js/12-recommend.js"></script>
+<!-- 界面层 -->
+<script src="assets/js/13-ui.js"></script>
+<script src="assets/js/14-app.js"></script>
+<script>
+/* 注册 Service Worker：装到桌面后离线可学（file:// 下自动跳过） */
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
