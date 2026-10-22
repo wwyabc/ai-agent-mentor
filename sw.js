@@ -5,7 +5,7 @@
  *  - 跨域请求（你接的大模型 API）：不拦截，直接放行
  * 更新内容时把 CACHE 版本号 +1 即可让老用户刷新到新版
  * ========================================================================= */
-var CACHE = 'aam-v1';
+var CACHE = 'aam-v2';
 
 var SHELL = [
   './',
@@ -20,6 +20,21 @@ var SHELL = [
   './assets/js/04-catalog.js',
   './assets/js/05-zh-titles.js',
   './assets/js/06-zh-p19.js',
+  './assets/js/06b-zh-meta.js',
+  './assets/js/06c-zh-lessons-a.js',
+  './assets/js/06c-zh-lessons-b.js',
+  './assets/js/06c-zh-lessons-c.js',
+  './assets/js/06c-zh-lessons-d.js',
+  './assets/js/06c-zh-lessons-e.js',
+  './assets/js/06c-zh-lessons-f.js',
+  './assets/js/06c-zh-lessons-g.js',
+  './assets/js/06c-zh-lessons-h.js',
+  './assets/js/06c-zh-lessons-i.js',
+  './assets/js/06d-zh-glossary-a.js',
+  './assets/js/06d-zh-glossary-b.js',
+  './assets/js/06d-zh-glossary-c.js',
+  './assets/js/06d-zh-glossary-d.js',
+  './assets/js/06d-zh-glossary-e.js',
   './assets/js/07-content-a.js',
   './assets/js/08-content-b.js',
   './assets/js/09-topics.js',

@@ -60,7 +60,7 @@
     var txt = '【' + AAM.title(l) + '】（' + l.phaseZh + ' · ' + l.num + '）\n\n';
     if (l.s) txt += '这节讲了什么：' + l.s + '\n\n';
     if (l.k) txt += '覆盖的小节：' + l.k + '\n\n';
-    txt += '这一节我还没有写精编中文讲解，可以先看仓库原文，或者让我用英文摘要给你展开讲。';
+    txt += '这一节我还没有写精编中文讲解，可以先看仓库原文，或者让我按上面的摘要给你展开讲。';
     return {
       text: txt,
       actions: [{ t: '打开仓库原文', v: 'repo:' + lessonId }, { t: '打开课程官网', v: 'site:' + lessonId }, { t: '标记已掌握', v: 'mastered:' + lessonId }]
@@ -128,7 +128,7 @@
     } else {
       if (l.s) txt += '仓库摘要：' + l.s + '\n\n';
       if (l.k) txt += '覆盖内容：' + l.k + '\n\n';
-      txt += '（这节暂无精编中文讲解，可以让我按英文摘要展开，或打开原文。）';
+      txt += '（这节暂无精编中文讲解，可以让我按上面的摘要展开，或打开原文。）';
     }
     return {
       text: txt,

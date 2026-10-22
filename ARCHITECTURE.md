@@ -58,6 +58,14 @@
 | 前置依赖图 | `ROADMAP_PREREQS` | 自动生成 | `ROADMAP.md` |
 | 术语卡（250 条） | `GLOSSARY` | 自动生成 | `glossary/` |
 | 精编中文讲解（25 节） | 人工编写 | `07-content-a.js` / `08-content-b.js` | 依据对应 `docs/en.md` 二次创作 |
+| 中文摘要与关键词 | 人工翻译 | `06c-zh-lessons-*.js` | 覆盖 04 号文件里的英文 `summary` / `keywords` |
+| 中文术语（250 条） | 人工翻译 | `06d-zh-glossary-*.js` | 覆盖 04 号文件里的英文释义与「为什么重要」 |
+
+**中文化机制**：自动生成的 `04-catalog.js` 保留仓库英文原文（便于与仓库对齐、重建时不被覆盖），
+由 `06b/06c/06d` 三张覆盖表在装载后调用 `AAM.zhMeta()` / `AAM.zhLessons()` / `AAM.zhGlossary()`
+把界面文案整体替换为中文。这样即使重新跑 `tools/build-catalog.cjs`，中文也不会丢失。
+术语译法统一遵循人工智能领域通行中文：Agent=智能体、alignment=对齐、guardrails=护栏、
+fine-tuning=微调、embedding=嵌入向量、RAG=检索增强生成、MCP=模型上下文协议。
 | 概念卡（16 张） | 人工编写 | `09-topics.js` | 跨课程主题答疑 |
 
 > **内容映射规则**：每节课在应用内都保留 `p` 字段（仓库相对路径），可一键跳转
@@ -209,6 +217,9 @@ ai-agent-mentor/
 │       ├── 02-03-*.js          # 手写的 Phase 00-09 中文标题
 │       ├── 04-catalog.js       # 【自动生成】523 节课 + 14 路线 + 250 术语
 │       ├── 05-06-*.js          # Phase 10-19 中文标题
+│       ├── 06b-zh-meta.js      # 中文覆盖表一：Phase 描述 + 补缺中文标题
+│       ├── 06c-zh-lessons-*.js # 中文覆盖表二：523 节摘要 + 关键词（9 个分片）
+│       ├── 06d-zh-glossary-*.js# 中文覆盖表三：250 条术语译名与释义（5 个分片）
 │       ├── 07-08-content-*.js  # 25 节精编中文讲解
 │       ├── 09-topics.js        # 16 张概念卡
 │       ├── 10-retriever.js     # 检索引擎

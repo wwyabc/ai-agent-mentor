@@ -1,0 +1,20 @@
+00	Setup & Tooling	Get your environment ready for everything that follows.
+01	Math Foundations	The intuition behind every AI algorithm, through code.
+02	ML Fundamentals	Classical ML — still the backbone of most production AI.
+03	Deep Learning Core	Neural networks from first principles. No frameworks until you build one.
+04	Computer Vision	From pixels to understanding — image, video, 3D, VLMs, and world models.
+05	NLP: Foundations to Advanced	Language is the interface to intelligence.
+06	Speech & Audio	Hear, understand, speak.
+07	Transformers Deep Dive	The architecture that changed everything.
+08	Generative AI	Create images, video, audio, 3D, and more.
+09	Reinforcement Learning	The foundation of RLHF and game-playing AI.
+10	LLMs from Scratch	Build, train, and understand large language models.
+11	LLM Engineering	Put LLMs to work in production.
+12	Multimodal AI	See, hear, read, and reason across modalities — from ViT patches to computer-use agents.
+13	Tools & Protocols	The interfaces between AI and the real world.
+14	Agent Engineering	Build agents from first principles, use coding agents reliably, and shape the work before implementation.
+15	Autonomous Systems	Long-horizon agents, self-improvement, and the 2026 safety stack.
+16	Multi-Agent & Swarms	Coordination, emergence, and collective intelligence.
+17	Infrastructure & Production	Ship AI to the real world.
+18	Ethics, Safety & Alignment	Build AI that helps humanity. Not optional.
+19	Capstone Projects	17 end-to-end products + 9 deep-build tracks. 20-40 hours per project; 4-12 lessons per track.

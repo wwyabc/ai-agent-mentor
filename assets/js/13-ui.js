@@ -145,7 +145,7 @@
     if (tab === 'all') {
       AAM.phases().forEach(function (p) {
         h += '<details class="acc" data-phase="' + esc(p.id) + '"><summary><b>' + esc(p.zh || p.en) + '</b> ' +
-          '<span class="meta">Phase ' + p.id + ' · ' + p.lessons.length + ' 节</span></summary>' +
+          '<span class="meta">阶段 ' + p.id + ' · ' + p.lessons.length + ' 节</span></summary>' +
           '<div class="body" data-lazy="' + esc(p.id) + '"></div></details>';
       });
       return h;

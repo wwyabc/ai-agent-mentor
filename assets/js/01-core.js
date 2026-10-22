@@ -197,6 +197,41 @@
   AAM.topic = function (obj) { AAM._topics.push(obj); };
   AAM.topics = function () { return AAM._topics; };
 
+  /* ---------------------------------------------------- 中文化覆盖表（i18n）
+   * 自动生成的目录（04 号文件）带的是仓库英文原题、摘要与关键词。
+   * 这里提供覆盖函数，由「中文覆盖表」文件调用，把界面文案整体换成中文，
+   * 不改动自动生成的数据结构。
+   * ---------------------------------------------------------------------- */
+  /** Phase 中文描述 + 补缺的中文标题 */
+  AAM.zhMeta = function (map) {
+    Object.keys(map.phaseDesc || {}).forEach(function (k) {
+      var p = AAM.phaseById(k);
+      if (p) p.descZh = map.phaseDesc[k];
+    });
+    AAM.zhTitles({ lesson: map.lesson || {} });
+  };
+
+  /** 课程中文摘要与关键词：{ '14-01': { s: '摘要', k: '关键词' } } */
+  AAM.zhLessons = function (map) {
+    Object.keys(map).forEach(function (id) {
+      var l = AAM.lesson(id);
+      if (!l) return;
+      if (map[id].s) l.s = map[id].s;
+      if (map[id].k) l.k = map[id].k;
+    });
+  };
+
+  /** 术语中文译名与释义：{ 'AdamW': { t: '中文名', d: '释义', w: '为什么重要' } } */
+  AAM.zhGlossary = function (map) {
+    (AAM.catalog.glossary || []).forEach(function (g) {
+      var v = map[g.t];
+      if (!v) return;
+      if (v.t) g.t = v.t;
+      if (v.d) g.d = v.d;
+      if (v.w) g.w = v.w;
+    });
+  };
+
   AAM.lesson = function (id) { return AAM._byId[id] || null; };
   AAM.allLessons = function () {
     var out = [];
