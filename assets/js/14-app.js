@@ -190,6 +190,7 @@
     if (v === 'send') { doSend(); return; }
     if (v === 'install') { doInstall(); return; }
     if (v === 'offline') { offlineStatus(); return; }
+    if (v === 'force-update') { forceUpdate(); return; }
     if (v === 'reroll') { render(); return; }
     if (v === 'export') {
       var blob = new Blob([Store.export()], { type: 'application/json' });
@@ -259,6 +260,22 @@
     var sw = navigator.serviceWorker && navigator.serviceWorker.controller;
     UI.toast((navigator.onLine ? '当前在线' : '当前离线') +
       (sw ? ' · 离线包已就绪，断网也能学' : ' · 离线包尚未安装，先访问一次页面'));
+  }
+
+  /* 清掉旧缓存并注销旧 Service Worker，然后整页重载，立即拿到最新版 */
+  function forceUpdate() {
+    if (!(window.caches && caches.keys)) { location.reload(); return; }
+    caches.keys().then(function (keys) {
+      return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+    }).then(function () {
+      if (!(navigator.serviceWorker && navigator.serviceWorker.getRegistrations)) return;
+      return navigator.serviceWorker.getRegistrations().then(function (regs) {
+        return Promise.all(regs.map(function (r) { return r.unregister(); }));
+      });
+    }).catch(function () {}).then(function () {
+      UI.toast('旧缓存已清理，正在刷新…');
+      setTimeout(function () { location.reload(); }, 600);
+    });
   }
 
   /* ---------------------------------------------------------- 学习计时器 */

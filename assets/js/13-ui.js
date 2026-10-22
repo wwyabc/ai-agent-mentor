@@ -139,7 +139,7 @@
   UI.paths = function (tab) {
     var h = '<div class="chips" style="margin-bottom:12px">' +
       '<button class="chip ' + (tab !== 'all' ? 'on' : '') + '" data-act="go:#/paths">精选路线</button>' +
-      '<button class="chip ' + (tab === 'all' ? 'on' : '') + '" data-act="go:#/paths/all">全部课程（20 Phase）</button>' +
+      '<button class="chip ' + (tab === 'all' ? 'on' : '') + '" data-act="go:#/paths/all">全部课程（20 个阶段）</button>' +
       '</div>';
 
     if (tab === 'all') {
@@ -198,7 +198,7 @@
       '<div style="font-size:18px;font-weight:650;margin:4px 0 6px">' + esc(AAM.title(l)) + '</div>' +
       '<div class="meta">' + esc(lessonMeta(l)) + '</div>' +
       (l.s ? '<div style="margin-top:10px">' + esc(l.s) + '</div>' : '') +
-      (l.k ? '<div class="meta" style="margin-top:8px">覆盖：' + esc(l.k) + '</div>' : '') +
+      (l.k ? '<div class="meta" style="margin-top:8px">小节：' + esc(l.k) + '</div>' : '') +
       '<div class="row wrap" style="margin-top:12px">' +
       '<button class="btn primary" data-act="act:learn:' + id + '">' + (p && p.step ? '继续学' : '开始学') + '</button>' +
       (c ? '<button class="btn" data-act="act:quiz:' + id + '">直接做题</button>' : '') +
@@ -377,7 +377,8 @@
       '<div class="meta">安装后全屏运行、断网也能打开，学习和进度都在本机。</div>' +
       '<div class="row wrap" style="margin-top:10px">' +
       '<button class="btn primary" data-act="install">' + (state.installReady ? '添加到主屏幕' : '安装 / 添加到主屏幕') + '</button>' +
-      '<button class="btn" data-act="offline">查看离线状态</button></div>' +
+      '<button class="btn" data-act="offline">查看离线状态</button>' +
+      '<button class="btn" data-act="force-update">内容还是旧的？强制更新</button></div>' +
       '<div class="hint">iPhone：用 <b>Safari</b> 打开 → 底部「分享」→「添加到主屏幕」。Android / 桌面 Chrome：直接点上面按钮。</div></div>';
 
     h += '<h2 class="sec">数据</h2><div class="card">' +
