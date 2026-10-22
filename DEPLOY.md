@@ -54,8 +54,12 @@ git branch -M main
 git push -u origin main
 ```
 
-然后：仓库 **Settings → Pages → Source 选 `main` / 根目录 `/`** → Save。
+然后：仓库 **Settings → Pages → Source 选 `Deploy from a branch` → `main` / 根目录 `/`** → Save。
 一分钟后访问：`https://<你的用户名>.github.io/ai-agent-mentor/`
+
+> 本仓库已按此方式部署完成：<https://wwyabc.github.io/ai-agent-mentor/>。
+> 本机没有 `gh` 时，可用仓库里的 `tools/pages-status.ps1`（读 Git 凭据里的令牌）自动开启 Pages；
+> 注意**免费账号的 Pages 只支持公开仓库**，私有库会报 `plan does not support GitHub Pages`，加 `-MakePublic` 可一键转公开。
 
 > 国内访问 GitHub Pages 可能偏慢；介意的话用 ③ 或 ④，或用 Cloudflare Pages（同样免费，速度更好）。
 

@@ -8,6 +8,10 @@
 
 ---
 
+## 在线地址
+
+👉 **https://wwyabc.github.io/ai-agent-mentor/** （GitHub Pages，手机直接打开；「添加到主屏幕」后可离线学）
+
 ## 快速开始
 
 ```bash
